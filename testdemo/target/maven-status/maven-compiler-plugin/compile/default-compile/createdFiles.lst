@@ -1,0 +1,5 @@
+com\alextestdemo\testdemo\services\RelatedProductsService.class
+com\alextestdemo\testdemo\TestdemoApplication.class
+com\alextestdemo\testdemo\services\RelatedProductsServiceImpl.class
+com\alextestdemo\testdemo\models\Product.class
+com\alextestdemo\testdemo\controllers\RelatedProductsController.class
