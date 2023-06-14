@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -27,21 +28,27 @@ public class RelatedProductsController {
     Logger logger = LoggerFactory.getLogger(RelatedProductsController.class);
     @ApiOperation(value = "Controller that returns the similar products given an ID of a product", nickname = "getSimilarProducts")
     @RequestMapping(value = "/{productId}/similar", method = RequestMethod.GET)
-    public ResponseEntity<List<Product>> getSimilarProducts(@PathVariable("productId") String id){
+    public ResponseEntity<?> getSimilarProducts(@PathVariable("productId") String id){
         HttpStatus status = null;
         HttpHeaders headers = new HttpHeaders();
         logger.debug("Entering in the getSimilarProducts function of RelatedProductsController.java");
         headers.add("Content-Type", "application/json");
-        List<Product> similarProductsList = service.getSimilarProducts(id);
-        if(similarProductsList != null){
-            logger.debug("The service returned the list without errors");
-            status = HttpStatus.OK;
-        }
-        else{
-            logger.debug("The service returned the list with errors");
+        List<Product> similarProductsList = new ArrayList<>();
+        try {
+            similarProductsList = service.getSimilarProducts(id);
+            if(similarProductsList != null) {
+                status = HttpStatus.OK;
+            }
+            else{
+                status = HttpStatus.NOT_FOUND;
+                return new ResponseEntity<>("Product Not found", headers, status);
+            }
+        } catch(Exception e) {
+            logger.error("Unexpected error in RelatedProductsController " + e.getMessage());
             status = HttpStatus.INTERNAL_SERVER_ERROR;
         }
         logger.info("Status of the request in the RelatedProductsController: " + status.toString());
         return new ResponseEntity<>(similarProductsList, headers, status);
+
     }
 }
