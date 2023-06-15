@@ -37,6 +37,13 @@ public class RelatedProductsServiceTest {
     }
 
     @Test
+    void testGetEmptyIDProductsAssociatedRequest(){
+        String id = "";
+        List<Integer> list = service.getSimilarProductsRequest(id);
+        assertEquals(null, list);
+    }
+
+    @Test
     void testGetFoundProductRequest(){
         String id = "1";
         Product p = service.getProductRequest(id);
@@ -67,6 +74,13 @@ public class RelatedProductsServiceTest {
     @Test
     void testGetNotFoundProduct(){
         String id = "152351235";
+        List<Product> list = service.getSimilarProducts(id);
+        assertEquals(null, list);
+    }
+
+    @Test
+    void testGetEmptyIDProduct(){
+        String id = "";
         List<Product> list = service.getSimilarProducts(id);
         assertEquals(null, list);
     }
