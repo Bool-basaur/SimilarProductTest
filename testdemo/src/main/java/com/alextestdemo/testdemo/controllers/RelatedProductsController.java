@@ -2,8 +2,6 @@ package com.alextestdemo.testdemo.controllers;
 
 import com.alextestdemo.testdemo.models.Product;
 import com.alextestdemo.testdemo.services.RelatedProductsService;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

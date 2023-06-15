@@ -24,13 +24,12 @@ public class RelatedProductsServiceImpl implements RelatedProductsService {
     public List<Product> getSimilarProducts(String id) {
         logger.debug("Entering in the getSimilarProducts function of RelatedProductsServiceImpl.java");
         List<Product> relatedProductsList = null;
-        RestTemplate restTemplate = new RestTemplate();
-        List<Integer> idList = getSimilarProductsRequest(id, restTemplate);
+        List<Integer> idList = getSimilarProductsRequest(id);
         if(idList != null && idList.size()>0){
             relatedProductsList = new ArrayList<>();
             Product p = null;
             for(Integer similarProductId : idList){
-                p = getProductRequest(similarProductId.toString(), restTemplate);
+                p = getProductRequest(similarProductId.toString());
                 if(p!=null) relatedProductsList.add(p);
             }
             logger.info("The returned list of similarProducts length is " + relatedProductsList.size());
@@ -38,8 +37,9 @@ public class RelatedProductsServiceImpl implements RelatedProductsService {
         return relatedProductsList;
     }
     @Cacheable(value="products", key="#id")
-    private Product getProductRequest(String id, RestTemplate restTemplate) {
+    public Product getProductRequest(String id) {
         logger.debug("Entering in the getProductRequest function of RelatedProductsServiceImpl.java");
+        RestTemplate restTemplate = new RestTemplate();
         Product product = null;
         try {
             ResponseEntity<Product> response =
@@ -59,9 +59,10 @@ public class RelatedProductsServiceImpl implements RelatedProductsService {
     }
 
     @Cacheable(value="products", key="#id")
-    private List<Integer> getSimilarProductsRequest(String id, RestTemplate restTemplate){
+    public List<Integer> getSimilarProductsRequest(String id){
         logger.debug("Entering in the getSimilarProductsRequest function of RelatedProductsServiceImpl.java");
         List<Integer> idsList = null;
+        RestTemplate restTemplate = new RestTemplate();
         try {
             ResponseEntity<List> response =
                     restTemplate.getForEntity(
@@ -78,7 +79,5 @@ public class RelatedProductsServiceImpl implements RelatedProductsService {
         }
         return idsList;
     }
-
-
 
 }
