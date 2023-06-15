@@ -30,7 +30,6 @@ public class RelatedProductsController {
         HttpStatus status = null;
         HttpHeaders headers = new HttpHeaders();
         logger.debug("Entering in the getSimilarProducts function of RelatedProductsController.java");
-        headers.add("Content-Type", "application/json");
         List<Product> similarProductsList = new ArrayList<>();
         try {
             similarProductsList = service.getSimilarProducts(id);
