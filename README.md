@@ -2,6 +2,8 @@
 
 -This Spring boot application includes the use of cache, logger, y swagger. Swagger doc is available in http://localhost:5000/swagger-ui.html#/
 
+-The code is located in testdemo > src > main > java > com.alextestdemo.testdemo
+
 -Tests that have been done with JUnit5 are in testdemo > src > test > java > com.alextestdemo.testdemo
 (Manual tests have been done using Google Chrome)
 
