@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+    product-server:
+        image: docker-related-products:latest
+        ports:
+            - 5000:5000
+        networks:
+            -  backenddevtest_default
+networks:
+    backenddevtest_default:
+        driver: backenddevtest_default
+        external: true
