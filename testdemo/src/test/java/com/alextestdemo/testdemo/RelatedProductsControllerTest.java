@@ -95,24 +95,10 @@ public class RelatedProductsControllerTest {
     }
 
     @Test
-    public void givenAnIDGetProductTheServiceThrowsExceptionStatus400(){
+    public void givenAnIDGetProductTheServiceThrowsExceptionStatus404(){
         String id = "";
 
         Mockito.when(service.getSimilarProducts(id)).thenThrow(new NullPointerException());
-
-        try {
-            mvc.perform(get("/product/" + id + "/similar"))
-                    .andExpect(status().isNotFound());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void nullPointerExceptionInControllerStatus400(){
-        String id = "";
-
-        Mockito.when(controller.getSimilarProducts("1")).thenThrow(new NullPointerException());
 
         try {
             mvc.perform(get("/product/" + id + "/similar"))
