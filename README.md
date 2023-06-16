@@ -1,11 +1,7 @@
 
-################################
 ## SimilarProductTest Project ##
-################################
 
-#################
 ## Annotations ##
-#################
 
 -This Spring boot application includes the use of cache, logger, y swagger. Swagger doc is available in http://localhost:5000/swagger-ui.html#/
 
@@ -23,9 +19,9 @@ Product that can't be found:
 http://localhost:5000/product/6/similar
 
 
-################################################################################################################
+
 ## Steps followed to dockerize the app (the containers refuse the connection from the one that I've created): ##
-################################################################################################################
+
 
 1.- Compile the project with the command "mvn clean install -DskipTests" in order to generate the .jar in the target folder.
 
@@ -35,13 +31,14 @@ http://localhost:5000/product/6/similar
 
 4.- After generating the image, use the command "docker-compose up" to create the container.
 
-###############################################
+
 ## Steps followed to test the app in an IDE: ##
-###############################################
 
 1.- The project must have 1.8 jdk version.
 
-2.- Make sure that the other containers (the ones in the backendDevTest projects) are up.
+2.- Load all dependencies.
 
-3.- Run a Java Application using "TestdemoApplication.java" as the main class.
+3.- Make sure that the other containers (the ones in the backendDevTest projects) are up.
+
+4.- Run a Java Application using "TestdemoApplication.java" as the main class.
 
