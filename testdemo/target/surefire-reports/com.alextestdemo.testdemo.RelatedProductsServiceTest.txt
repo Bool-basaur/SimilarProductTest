@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: com.alextestdemo.testdemo.RelatedProductsServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.alextestdemo.testdemo.RelatedProductsServiceTest
+testGetFoundProductsSimilarToAnotherOne  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetFoundProductsSimilarToAnotherOne(RelatedProductsServiceTest.java:87)
+
+testGetFoundProductsAssociatedRequest  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetFoundProductsAssociatedRequest(RelatedProductsServiceTest.java:57)
+
+testGetNotFoundProductsAssociatedRequest  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetNotFoundProductsAssociatedRequest(RelatedProductsServiceTest.java:34)
+
+testGetNotFoundProductRequest  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetNotFoundProductRequest(RelatedProductsServiceTest.java:27)
+
+testGetNotFoundProductAssociations  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetNotFoundProductAssociations(RelatedProductsServiceTest.java:76)
+
+testGetNotFoundProduct  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetNotFoundProduct(RelatedProductsServiceTest.java:69)
+
+testGetFoundProductsSimilarToAnotherOneWithOneProductNotAvailable  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetFoundProductsSimilarToAnotherOneWithOneProductNotAvailable(RelatedProductsServiceTest.java:114)
+
+testGetFoundProductRequest  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsServiceTest.testGetFoundProductRequest(RelatedProductsServiceTest.java:41)
+
