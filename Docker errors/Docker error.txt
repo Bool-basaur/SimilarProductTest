@@ -1,0 +1,5 @@
+After the docker-compose up, I tried to test my implementation, but there was a "Connection refused" error from the other container, the one that uses the 3001 port and that returns the products and similar product ids. For this reason, dockerized app was returning a "No Product found" message. 
+
+After doing some research on internet, I found out that this could be due to the isolation of the docker containers. Docker containers will refuse the requests from another containers if they're not in the same network. I forced my container to be in the same network than the other ones, but the problem still persisted: the connection was refused.
+
+There are some images in this folder showing how I configured the containers to be in the same network, yet the connection was refused anyway.
