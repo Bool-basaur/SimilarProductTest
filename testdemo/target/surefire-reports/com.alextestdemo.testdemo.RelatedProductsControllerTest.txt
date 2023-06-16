@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.alextestdemo.testdemo.RelatedProductsControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.376 s <<< FAILURE! - in com.alextestdemo.testdemo.RelatedProductsControllerTest
+getProductsAssociated  Time elapsed: 0.095 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.alextestdemo.testdemo.RelatedProductsControllerTest.getProductsAssociated(RelatedProductsControllerTest.java:92)
+
+givenAnIDGetProductAssociationsStatus200  Time elapsed: 2.274 s  <<< ERROR!
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:5000/product/1/similar": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at com.alextestdemo.testdemo.RelatedProductsControllerTest.givenAnIDGetProductAssociationsStatus200(RelatedProductsControllerTest.java:65)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at com.alextestdemo.testdemo.RelatedProductsControllerTest.givenAnIDGetProductAssociationsStatus200(RelatedProductsControllerTest.java:65)
+
