@@ -20,7 +20,7 @@ http://localhost:5000/product/6/similar
 
 
 
-## Steps followed to dockerize the app (the containers refuse the connection from the one that I've created): ##
+## Steps followed to dockerize the app (the containers refuse the connection from the one that I've created despite being in the same network, more details in "Docker errors" folder): ##
 
 
 1.- Compile the project with the command "mvn clean install -DskipTests" in order to generate the .jar in the target folder.
